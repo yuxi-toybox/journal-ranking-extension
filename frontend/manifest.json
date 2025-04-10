@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "期刊排名查询助手",
+  "version": "1.0",
+  "description": "快速查询期刊排名与相关信息",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

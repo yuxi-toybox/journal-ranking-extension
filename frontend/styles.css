@@ -1,0 +1,27 @@
+
+body {
+  font-family: Arial, sans-serif;
+  width: 300px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+#journalName {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#queryButton {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+#result {
+  margin-top: 10px;
+}
