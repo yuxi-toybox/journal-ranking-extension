@@ -4,7 +4,8 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
   resultBox.innerHTML = "查询中...";
 
   try {
-    const res = await fetch(`http://localhost:5050/rank?journal=${encodeURIComponent(journal)}`);
+    // const res = await fetch(`http://localhost:5050/rank?journal=${encodeURIComponent(journal)}`);
+    const res = await fetch(`https://journal-ranking-extension.onrender.com/rank?journal=${encodeURIComponent(journal)}`)
     const data = await res.json();
 
     if (data.error) {
@@ -14,7 +15,7 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
       localStorage.setItem("lastQuery", JSON.stringify(data));
     }
   } catch (e) {
-    resultBox.innerHTML = "查询失败，请检查本地服务是否启动。";
+    resultBox.innerHTML = "查询失败，请检查服务是否启动。";
   }
 });
 

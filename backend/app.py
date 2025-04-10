@@ -69,6 +69,8 @@ def rank():
                 return p.text.strip() if p else "N/A"
             return "N/A"
 
+        div = detail_soup.find("div", class_="journaldescription")
+        journal_update = div.find("h1").text.strip()
         import re
         sjr_h2 = detail_soup.find("h2", string=re.compile(r"SJR\s+\d{4}"))
         sjr = "N/A"
@@ -109,7 +111,7 @@ def rank():
 
 
         return jsonify({
-            "journal": journal,
+            "journal": journal_update,
             "sjr": sjr,
             "quartile": quartile,
             "hindex": hindex,
