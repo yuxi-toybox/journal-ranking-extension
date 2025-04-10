@@ -14,6 +14,11 @@ headers = {
 
 BASE_URL = "https://www.scimagojr.com/"
 
+@app.route("/health-check")
+def health_check():
+    return "OK", 200
+
+
 @app.route("/rank")
 def rank():
     journal = request.args.get("journal", "").strip()
