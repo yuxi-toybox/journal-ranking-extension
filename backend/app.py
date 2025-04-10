@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import difflib
 from urllib.parse import urljoin
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -13,6 +14,12 @@ headers = {
 }
 
 BASE_URL = "https://www.scimagojr.com/"
+
+
+@app.route("/")
+def home():
+    return "Hello from Flask! Try /rank?journal=Nature"
+
 
 @app.route("/health-check")
 def health_check():
@@ -116,4 +123,5 @@ def rank():
 
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5050))
     app.run(host="0.0.0.0", port=5050)
